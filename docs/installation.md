@@ -37,6 +37,13 @@ If you have not installed `conda` or `mamba` yet, we recommend installing `mamba
     | --------|-----------------------|-----------|
     | Windows | x86_64                | [Mambaforge-Windows-x86_64](https://github.com/conda-forge/miniforge/releases/latest/download/Mambaforge-Windows-x86_64.exe) |
 
+Make the shell script executable, run the script, and follow the instructions to complete installation.
+For example, run the following code in a terminal on MacOS.
+
+```
+chmod +x ./Mambaforge-MacOSX-arm64.sh
+./Mambaforge-MacOSX-arm64.sh
+```
 
 !!! note "Why choose `mamba` over `conda`?"
 
@@ -69,6 +76,7 @@ Now we can create a virtual environment for the PyPolo project:
 ## Install PyPolo
 
 ```
+mamba install -c conda-forge pyvista
 git clone https://github.com/Weizhe-Chen/PyPolo.git
 cd PyPolo
 pip install -e .
@@ -78,6 +86,12 @@ If you would like to become a PyPolo developer and contribute to the project, pl
 
 ```
 pip install -r requirements_dev.txt
+mamba install lxml
+pip install -r docs/requirements.txt
 ```
 
-This command will install all the necessary dependencies needed for development specified in the `requirements_dev.txt` file.
+The documentation website can be launched locally via
+
+```
+mkdocs serve
+```
